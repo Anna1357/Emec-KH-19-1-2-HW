@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Homework for JS part. Part 1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <style>
+            div.widget {
+                padding:32ps;
+                border:1px solid #bbb;
+            }
+            div.widget span {
+                background-color: #eee;
+                padding: 2px 10px;
+            }
+        </style>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script>
+            class Widget {
+                constructor(func) {
+                    func(this.prepare())
+                }
+
+                prepare () {
+                    let core = document.createElement('DIV');
+                    let input = document.createElement('INPUT');
+                    let button = document.createElement('BUTTON');
+                    button.innerText = "Make action";
+                    input.setAttribute('placeholder', 'Enter value');
+                    let result = document.createElement('SPAN');
+                    core.appendChild(input);
+                    core.appendChild(button);
+                    core.appendChild(result);
+                    core.classList.add('widget');
+                    core.setAttribute('id', Date.now().toString());
+                    document.body.appendChild(core);
+                    return core;
+                }
+            }
+
+            // in this part you should make a lot of points for your HW parts
+            new Widget((content) => {
+                
+                let value =  content.querySelector('input').value;
+                let result = content.querySelector('span');
+                let button = content.querySelector('button');
+
+                // there will be you part of code from Home Work - make someting after click button
+                button.addEventListener('click', () => {
+                    // put your code right there!!!
+
+
+
+
+
+                    console.log('click');
+                });
+
+
+                result.innerText = 'test'; // there will be your result
+            });
+        </script>
+    </body>
+</html>
